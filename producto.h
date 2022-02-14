@@ -38,11 +38,11 @@ class Producto{
         }
 
         bool operator > (const Producto &p){
-            return nombre < p.nombre;
+            return nombre > p.nombre;
         }
 
         bool operator > (const Producto &p) const{
-            return nombre < p.nombre;
+            return nombre > p.nombre;
         }
 
     private:

@@ -33,6 +33,7 @@ class ArbolBinario {
         const T& getValue () const;
         void preOrder () const;
         void inOrder () const;
+        void inOrderArchivo (ofstream &archivo);
         void postOrder () const;
 
     protected:
@@ -100,6 +101,19 @@ void ArbolBinario<T>::inOrder () const{
     cout << root->data << " ";
     
     getRightChild ().inOrder ();
+}
+
+template <typename T>
+void ArbolBinario<T>::inOrderArchivo (ofstream &archivo){
+    if (isNull ()){
+        return;
+    }
+    
+    getLeftChild ().inOrderArchivo (archivo);
+
+    archivo << root->data;
+    
+    getRightChild ().inOrderArchivo (archivo);
 }
 
 template <typename T>
