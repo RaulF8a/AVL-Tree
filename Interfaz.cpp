@@ -12,9 +12,9 @@ void Interfaz::eliminar (const Producto &valor){
     arbol.erase (valor);
 }
 
-Producto Interfaz::buscar (const Producto &valor){
-    return *arbol.find (valor);
-}
+// Producto Interfaz::buscar (const Producto &valor){
+//     return *arbol.find (valor);
+// }
 
 void Interfaz::imprimirArbol (){
     arbol.inOrder ();
@@ -24,7 +24,7 @@ void Interfaz::respaldarArchivo (){
     ofstream archivo ("file01.txt", ios::app);
 
     if (archivo.is_open ()){
-        arbol.inOrderArchivo (archivo);
+        arbol.cargarArchivo (archivo);
     }
     else{
         throw runtime_error ("File could not be opened.");
